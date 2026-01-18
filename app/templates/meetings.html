@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}会議一覧{% endblock %}
+
+{% block content %}
+<h2>会議一覧</h2>
+
+{% if meetings %}
+<ul>
+    {% for meeting in meetings %}
+    <li>
+        <a href="/ui/meetings/{{ meeting.id }}">
+            {{ meeting.date }} : {{ meeting.title }}
+        </a>
+
+        <span>（アクション {{ meeting.actions|length }} 件）</span>
+
+        <form
+            method="post"
+            action="/ui/meetings/{{ meeting.id }}/delete"
+            style="display:inline;"
+            onsubmit="return confirm('この会議を削除しますか？');"
+        >
+            <button type="submit">削除</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>会議がまだ登録されていません</p>
+{% endif %}
+
+<hr>
+
+<h3>会議追加</h3>
+<form method="post" action="/ui/meetings">
+    <input type="text" name="title" placeholder="会議タイトル" required>
+    <input type="date" name="meeting_date" required>
+    <button type="submit">会議追加</button>
+</form>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}{{ meeting.title }}{% endblock %}
+
+{% block content %}
+
+<h2>{{ meeting.title }}</h2>
+<p class="text-muted">日付：{{ meeting.meeting_date }}</p>
+
+<hr>
+
+<h2>アクション一覧</h2>
+
+{% if actions %}
+<ul class="meeting-list">
+    {% for action in actions %}
+    <li class="meeting-item">
+        <div>
+            <strong>{{ action.content }}</strong><br>
+            <span class="text-muted">
+                期限：{{ action.due_date }} ／ 状態：{{ action.status }}
+            </span>
+        </div>
+
+        <div class="action-buttons">
+            <!-- 完了 / 未完了 -->
+            <form method="post"
+                  action="/ui/actions/{{ action.id }}/toggle"
+                  style="display:inline;">
+                <button class="btn-secondary" type="submit">
+                    {% if action.status == "完了" %}
+                        未完了に戻す
+                    {% else %}
+                        完了
+                    {% endif %}
+                </button>
+            </form>
+
+            <!-- 削除 -->
+            <form method="post"
+                  action="/ui/actions/{{ action.id }}/delete"
+                  style="display:inline;"
+                  onsubmit="return confirm('このアクションを削除しますか？')">
+                <button class="btn-delete" type="submit">削除</button>
+            </form>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>アクションはまだありません。</p>
+{% endif %}
+
+<hr>
+
+<h2>アクションを追加</h2>
+
+<form class="form" method="post" action="/ui/meetings/{{ meeting.id }}/actions">
+    <input type="text" name="content" placeholder="アクション内容" required>
+    <input type="date" name="due_date" required>
+    <button class="btn-primary" type="submit">追加</button>
+</form>
+
+<hr>
+
+<div class="danger-zone">
+    <form method="post"
+          action="/ui/meetings/{{ meeting.id }}/delete"
+          onsubmit="return confirm('この会議を削除します。よろしいですか？')">
+        <button class="btn-delete" type="submit">
+            この会議を削除
+        </button>
+    </form>
+</div>
+
+<p style="margin-top: 24px;">
+    <a href="/ui/meetings">← 会議一覧へ戻る</a>
+</p>
+
+{% endblock %}
