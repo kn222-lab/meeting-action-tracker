@@ -3,23 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Meeting Action Tracker{% endblock %}</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
 </head>
 <body>
 
-<header>
-    <h1>Meeting Action Tracker</h1>
-</header>
-
-{% if request.session.get("flash") %}
-    <div class="flash success">
-        {{ request.session.pop("flash") }}
-    </div>
-{% endif %}
-
-<main>
-    {% block content %}{% endblock %}
-</main>
+{% block content %}{% endblock %}
 
 </body>
 </html>
