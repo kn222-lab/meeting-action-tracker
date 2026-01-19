@@ -1,88 +1,130 @@
+/* ===== Base ===== */
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     background: #f9fafb;
     color: #111827;
+    line-height: 1.6;
 }
 
+/* ===== Header ===== */
 .header {
-    background: #2563eb;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
     color: white;
-    padding: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .logo {
     margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
+/* ===== Layout ===== */
 .container {
-    max-width: 800px;
-    margin: 32px auto;
-    padding: 0 16px;
+    max-width: 820px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
+/* ===== Meeting List ===== */
 .meeting-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .meeting-item {
     background: white;
     border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    padding: 12px;
-    margin-bottom: 12px;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.meeting-item:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transform: translateY(-1px);
 }
 
 .meeting-link {
     text-decoration: none;
     color: #2563eb;
-    font-weight: 500;
+    font-weight: 600;
 }
 
+.meeting-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== Forms ===== */
 .form {
-    margin-top: 16px;
+    margin-top: 20px;
     display: flex;
-    gap: 8px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 input {
-    padding: 8px;
+    padding: 10px 12px;
     border: 1px solid #d1d5db;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 180px;
 }
 
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+}
+
+/* ===== Buttons ===== */
 .btn-primary {
     background: #2563eb;
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: 10px 14px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: #111827;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #d1d5db;
 }
 
 .btn-delete {
     background: #ef4444;
     color: white;
     border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
+    padding: 8px 12px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
-.footer {
-    text-align: center;
-    color: #6b7280;
-    font-size: 12px;
-    margin: 40px 0;
-}
-
-.text-muted {
-    color: #6b7280;
-    font-size: 14px;
+.btn-delete:hover {
+    background: #dc2626;
 }
 
 .action-buttons {
@@ -90,17 +132,23 @@ input {
     gap: 8px;
 }
 
-.btn-secondary {
-    background: #e5e7eb;
-    color: #111827;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
-    cursor: pointer;
+/* ===== Utility ===== */
+.text-muted {
+    color: #6b7280;
+    font-size: 14px;
 }
 
+/* ===== Danger Zone ===== */
 .danger-zone {
-    margin-top: 24px;
-    padding-top: 16px;
-    border-top: 1px solid #e5e7eb;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px dashed #e5e7eb;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    color: #6b7280;
+    font-size: 12px;
+    margin: 48px 0 24px;
 }
