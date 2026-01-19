@@ -14,3 +14,4 @@ venv/
 
 # Database (必要に応じて)
 # dev.db
+*.db
