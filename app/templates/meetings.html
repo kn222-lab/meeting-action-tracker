@@ -23,7 +23,7 @@
 <h3>会議追加</h3>
 <form class="form" method="post" action="/ui/meetings">
   <input name="title" placeholder="会議タイトル">
-  <input type="date" name="date">
+  <input type="date" name="meeting_date" required>
   <button class="btn-primary">追加</button>
 </form>
 {% endblock %}
