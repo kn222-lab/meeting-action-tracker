@@ -152,3 +152,158 @@ input:focus {
     font-size: 12px;
     margin: 48px 0 24px;
 }
+
+/* =========================
+   Responsive (Mobile)
+========================= */
+@media (max-width: 768px) {
+
+    .container {
+        margin: 16px auto;
+        padding: 0 12px;
+    }
+
+    .meeting-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .action-buttons {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    input,
+    .btn-primary,
+    .btn-secondary,
+    .btn-delete {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .header {
+        padding: 12px;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+}
+
+/* =========================
+   Mobile (〜600px)
+========================= */
+@media (max-width: 600px) {
+  .container {
+    margin: 16px auto;
+    padding: 0 12px;
+  }
+
+  .header {
+    padding: 12px;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .meeting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .action-buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form input,
+  .form button {
+    width: 100%;
+  }
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 600px) {
+
+  .container {
+    margin: 16px auto;
+    padding: 0 12px;
+  }
+
+  .meeting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .action-buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .btn-delete {
+    width: 100%;
+  }
+
+  .form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  input {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .meeting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .action-buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn-delete {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  input {
+    font-size: 16px; /* iOSのズーム防止 */
+  }
+
+  .btn-primary {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
