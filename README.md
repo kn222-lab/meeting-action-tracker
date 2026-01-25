@@ -10,7 +10,7 @@
 👉 https://meeting-action-tracker.onrender.com/ui/meetings
 
 ※ 認証なしで誰でも閲覧・操作できます  
-※ Freeプランのため、初回アクセス時に数十秒かかる場合があります
+※ Render Freeプランのため、初回アクセス時に数十秒かかる場合があります
 
 ---
 
@@ -21,15 +21,17 @@
 - 会議の削除
 - 会議ごとのアクション件数表示
 - シンプルで直感的なUI
+- **レスポンシブ対応（PC / スマートフォン）**
 
 ---
 
 ## 🖼 画面イメージ
 
-- 会議一覧画面  
-- 会議追加フォーム  
+- 会議一覧画面（スマホ・PC対応）
+- 会議追加フォーム
 - 会議詳細画面（アクション管理）
 
+※ 画面サイズに応じてレイアウトが最適化されます  
 ※ 最小構成で「実務に耐える流れ」を重視しています
 
 ---
@@ -39,7 +41,7 @@
 - **Backend**: Python / FastAPI
 - **Template Engine**: Jinja2
 - **Database**: SQLite
-- **Frontend**: HTML / CSS（Vanilla）
+- **Frontend**: HTML / CSS（Vanilla、レスポンシブ対応）
 - **Deployment**: Render
 - **Version Control**: Git / GitHub
 
@@ -72,28 +74,28 @@
 - 期限（Due Date）管理
 - ステータス管理（未着手 / 進行中 / 完了）
 - 認証機能（ユーザーごとに管理）
-- UIの改善（モバイル対応）
+- UIの改善（モバイル体験の向上）
 
 ---
 
 ## 📂 リポジトリ構成（抜粋）
 
 app/
-├── main.py
-├── database.py
-├── models/
-├── schemas/
-├── templates/
-│ ├── base.html
-│ ├── meetings.html
-│ └── meeting_detail.html
-├── static/
-│ └── style.css
-
+├── main.py  
+├── database.py  
+├── models/  
+├── schemas/  
+├── templates/  
+│ ├── base.html  
+│ ├── meetings.html  
+│ └── meeting_detail.html  
+├── static/  
+│ └── style.css  
 
 ---
 
 ## 👤 Author
 
 Namiki Kenta  
-業務効率化 / Webアプリ開発 / DX支援
+Reframe /  
+業務効率化・Webエンジニア
