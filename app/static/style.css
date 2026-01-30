@@ -244,3 +244,28 @@ input[type="date"] {
     padding: 12px;
   }
 }
+
+/* =========================
+   iOS Safari date overflow fix (strong)
+========================= */
+
+/* formの中身が横にはみ出すのを完全防止 */
+.form {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* 入力部品が flex の計算で横に伸びないようにする */
+.form > * {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+/* iOS Safariのdate入力が謎に横に広がるのを潰す */
+input[type="date"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
