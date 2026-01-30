@@ -341,3 +341,11 @@ input:focus {
         width: 100%;
     }
 }
+
+/* iOS Safari対策：date入力がはみ出す問題 */
+input[type="date"] {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
