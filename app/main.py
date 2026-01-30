@@ -22,7 +22,7 @@ from app.schemas.action import (
 )
 from fastapi.responses import HTMLResponse
 
-from fastapi import Form
+from fastapi import Request, Form
 from fastapi.responses import RedirectResponse
 
 from datetime import datetime, date
@@ -251,6 +251,15 @@ def create_meeting_ui(
     meeting_date: str = Form(...),
     db: Session = Depends(get_db)
 ):
+    title = title.strip()
+    
+    #✅ タイトル未入力チェック
+    if not title:
+        return RedirectResponse(
+            url="/ui/meetings?error=title_required",
+            status_code=303
+        )
+
     meeting = Meeting(
         title=title,
         meeting_date=datetime.strptime(meeting_date, "%Y-%m-%d").date()
